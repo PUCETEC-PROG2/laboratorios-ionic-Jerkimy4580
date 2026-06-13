@@ -2,9 +2,9 @@
 
 ## Información del Estudiante
 
-- **Nombre:** [Tu nombre completo aquí]
-- **Carrera:** [Tu carrera]
-- **Fecha de inicio:** [Fecha]
+- **Nombre:** Jeremy Joshua Arévalo Cango
+- **Carrera:** Desarollo de software
+- **Fecha de inicio:** 13/06/2026
 
 ---
 
@@ -13,6 +13,7 @@ Este proyecto es una aplicación móvil desarrollada con Ionic y React que imple
 ## Descripción del Proyecto
 
 Aplicación móvil que permite:
+
 - Visualizar lista de repositorios de GitHub
 - Crear nuevos repositorios
 - Ver información del usuario
@@ -30,6 +31,7 @@ En este laboratorio explorarás varios componentes de GUI propios de Ionic para 
 - **Pestaña de información de usuario**: Interfaz para desplegar la información del perfil del usuario de GitHub
 
 **Componentes Ionic a utilizar:**
+
 - `IonList`, `IonItem`, `IonLabel`
 - `IonInput`, `IonTextarea`, `IonButton`
 - `IonCard`, `IonCardHeader`, `IonCardContent`
@@ -46,6 +48,7 @@ Implementación de la comunicación con la API REST de GitHub usando Axios:
 - Integración de los datos obtenidos con los componentes GUI
 
 **Endpoints a implementar:**
+
 - `GET /user/repos` - Obtener repositorios del usuario
 - `GET /user` - Obtener información del usuario
 
@@ -60,6 +63,7 @@ Implementación de la funcionalidad para crear repositorios:
 - Feedback visual al usuario
 
 **Endpoint a implementar:**
+
 - `POST /user/repos` - Crear un nuevo repositorio
 
 ### Examen Parcial 2: Implementación de una API REST usando Ionic (Métodos DELETE y PATCH)
@@ -73,6 +77,7 @@ Implementación de funcionalidades avanzadas de gestión:
 - Manejo completo del ciclo CRUD
 
 **Endpoints a implementar:**
+
 - `DELETE /repos/{owner}/{repo}` - Eliminar un repositorio
 - `PATCH /repos/{owner}/{repo}` - Actualizar un repositorio
 
@@ -88,12 +93,14 @@ Implementación de funcionalidades avanzadas de gestión:
 ## Instalación
 
 1. Clonar el repositorio:
+
 ```bash
 git clone <url-del-repositorio>
 cd github-client
 ```
 
 2. Instalar dependencias:
+
 ```bash
 npm install
 ```
@@ -107,16 +114,19 @@ npm install
 ### Desarrollo Web
 
 Levantar el servidor de desarrollo:
+
 ```bash
 ionic serve
 ```
 
 Levantar en un puerto específico:
+
 ```bash
 ionic serve --port=8100
 ```
 
 Abrir en el navegador automáticamente:
+
 ```bash
 ionic serve --open
 ```
@@ -124,11 +134,13 @@ ionic serve --open
 ### Construcción
 
 Generar build de producción:
+
 ```bash
 ionic build
 ```
 
 Build con configuración específica:
+
 ```bash
 ionic build --prod
 ```
@@ -138,11 +150,13 @@ ionic build --prod
 #### Agregar plataformas
 
 Agregar plataforma Android:
+
 ```bash
 ionic capacitor add android
 ```
 
 Agregar plataforma iOS:
+
 ```bash
 ionic capacitor add ios
 ```
@@ -150,16 +164,19 @@ ionic capacitor add ios
 #### Sincronizar código con plataformas
 
 Sincronizar todos los cambios:
+
 ```bash
 ionic capacitor sync
 ```
 
 Sincronizar solo Android:
+
 ```bash
 ionic capacitor sync android
 ```
 
 Sincronizar solo iOS:
+
 ```bash
 ionic capacitor sync ios
 ```
@@ -167,16 +184,19 @@ ionic capacitor sync ios
 #### Copiar archivos web a plataformas nativas
 
 Copiar a todas las plataformas:
+
 ```bash
 ionic capacitor copy
 ```
 
 Copiar solo a Android:
+
 ```bash
 ionic capacitor copy android
 ```
 
 Copiar solo a iOS:
+
 ```bash
 ionic capacitor copy ios
 ```
@@ -192,11 +212,13 @@ ionic capacitor update
 #### Abrir en IDE nativo
 
 Abrir proyecto Android en Android Studio:
+
 ```bash
 ionic capacitor open android
 ```
 
 Abrir proyecto iOS en Xcode:
+
 ```bash
 ionic capacitor open ios
 ```
@@ -204,16 +226,19 @@ ionic capacitor open ios
 #### Live Reload en dispositivos
 
 Desplegar con Live Reload en Android:
+
 ```bash
 ionic capacitor run android --livereload --external
 ```
 
 Desplegar con Live Reload en iOS:
+
 ```bash
 ionic capacitor run ios --livereload --external
 ```
 
 Live Reload con SSL:
+
 ```bash
 ionic capacitor run android --livereload --external --ssl
 ```
@@ -221,11 +246,13 @@ ionic capacitor run android --livereload --external --ssl
 #### Ejecutar en dispositivo específico
 
 Listar dispositivos disponibles:
+
 ```bash
 ionic capacitor run android --list
 ```
 
 Ejecutar en dispositivo específico:
+
 ```bash
 ionic capacitor run android --target=<device-id>
 ```
@@ -235,16 +262,19 @@ ionic capacitor run android --target=<device-id>
 #### Configuración inicial
 
 Configurar tu nombre de usuario:
+
 ```bash
 git config --global user.name "Tu Nombre"
 ```
 
 Configurar tu email:
+
 ```bash
 git config --global user.email "tu.email@ejemplo.com"
 ```
 
 Ver configuración actual:
+
 ```bash
 git config --list
 ```
@@ -252,36 +282,43 @@ git config --list
 #### Comandos básicos de Git
 
 Ver estado del repositorio:
+
 ```bash
 git status
 ```
 
 Agregar archivos al staging area:
+
 ```bash
 git add .
 ```
 
 Agregar un archivo específico:
+
 ```bash
 git add nombre-archivo.ts
 ```
 
 Hacer commit de los cambios:
+
 ```bash
 git commit -m "Descripción de los cambios realizados"
 ```
 
 Subir cambios al repositorio remoto:
+
 ```bash
 git push
 ```
 
 Subir cambios a una rama específica:
+
 ```bash
 git push origin nombre-rama
 ```
 
 Descargar cambios del repositorio remoto:
+
 ```bash
 git pull
 ```
@@ -289,21 +326,25 @@ git pull
 #### Flujo de trabajo recomendado
 
 1. Verifica el estado de tu repositorio:
+
 ```bash
 git status
 ```
 
 2. Agrega los archivos modificados:
+
 ```bash
 git add .
 ```
 
 3. Realiza un commit con un mensaje descriptivo:
+
 ```bash
 git commit -m "Lab 7: Implementación de componentes GUI"
 ```
 
 4. Sube los cambios al repositorio:
+
 ```bash
 git push
 ```
@@ -311,16 +352,19 @@ git push
 ### Comandos Útiles de Ionic de Ionic
 
 Ver información del proyecto:
+
 ```bash
 ionic info
 ```
 
 Ver configuración de Capacitor:
+
 ```bash
 ionic capacitor doctor
 ```
 
 Limpiar y reconstruir:
+
 ```bash
 rm -rf node_modules package-lock.json
 npm install
@@ -329,6 +373,7 @@ ionic capacitor sync
 ```
 
 Ver versión de Ionic:
+
 ```bash
 ionic --version
 ```
@@ -396,9 +441,9 @@ Para dudas o problemas durante el desarrollo de los laboratorios, consulta con t
 
 Este proyecto está con fines educativos.
 
-
 ## Datos del docente
 
 Pablo Pérez Martínez
+
 - ✉️ paperez@puce.edu.ec
 - ✉️ pablo.perez@uisek.edu.ec
