@@ -1,40 +1,56 @@
-import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
+import React, { useState } from 'react';
+import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, useIonViewWillEnter } from '@ionic/react';
+
 import './Tab3.css';
+import type { GithubUser } from '../interfaces/GithubUser';
+import { fetchUserInfo } from '../services/GithubSevices';
+import LoginSpinner from '../components/LoadingSpinner';
 
 const Tab3: React.FC = () => {
+  const [userInfo, setUserInfo] = useState<GithubUser | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [errorMsg, setErrorMsg] = useState<string>("");
+
+  useIonViewWillEnter(() => {
+    setLoading(true);
+    fetchUserInfo()
+      .then((user) => {
+        setUserInfo(user);
+      })
+      .catch((error) => {
+        setErrorMsg("Error obteniendo información del usuario: " + (error as Error).message);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  });
+
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Perfil De Usuario</IonTitle>
+          <IonTitle>Perfil del Usuario</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Perfil De Usuario</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <div className='card-container'>
-          <IonCard className='card'>  
-            <img
-            src='https://m.media-amazon.com/images/M/MV5BYjg3M2I1YWMtMjcwNS00N2U4LThiNDMtY2IyN2VjY2EwNDRlXkEyXkFqcGc@._V1_QL75_UY281_CR31,0,500,281_.jpg'
-            alt='Foto de perfil'>
-            </img>
-        <IonCardHeader>
-          <IonCardTitle>Jeremy Arévalo</IonCardTitle>
-          <IonCardSubtitle>Jeremy4580</IonCardSubtitle>
-        </IonCardHeader>
-        <IonCardContent>
-          <p>Desarollador de software</p>
-        </IonCardContent>
-          </IonCard>
-
-
-
-        </div>
-      
+        {loading ? (
+          <LoginSpinner />
+        ) : errorMsg ? (
+          <p style={{ color: "red", padding: "1rem" }}>{errorMsg}</p>
+        ) : (
+          <div className="card-container">
+            <IonCard className="card">
+              <img src={userInfo?.avatar_url} alt={userInfo?.name} />
+              <IonCardHeader>
+                <IonCardTitle>{userInfo?.name}</IonCardTitle>
+                <IonCardSubtitle>{userInfo?.login}</IonCardSubtitle>
+              </IonCardHeader>
+              <IonCardContent>
+                <p>{userInfo?.bio}</p>
+              </IonCardContent>
+            </IonCard>
+          </div>
+        )}
       </IonContent>
     </IonPage>
   );
